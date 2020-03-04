@@ -39,6 +39,8 @@ class StoryBrain {
         choice2: '')
   ];
 
+  int storyNumber = 0;
+
   String getStory() {
     return _storyData[0].storyTitle;
   }
@@ -49,6 +51,22 @@ class StoryBrain {
 
   String getChoice2() {
     return _storyData[0].choice2;
+  }
+
+  void nextStory(int userChoice) {
+    if (storyNumber == 0 && userChoice == 1) {
+      storyNumber = 2;
+    } else if (storyNumber == 0 && userChoice == 2) {
+      storyNumber = 1;
+    } else if (storyNumber == 1 && userChoice == 1) {
+      storyNumber = 2;
+    } else if (storyNumber == 1 && userChoice == 2) {
+      storyNumber = 3;
+    } else if (storyNumber == 2 && userChoice == 1) {
+      storyNumber = 5;
+    } else if (storyNumber == 2 && userChoice == 2) {
+      storyNumber = 4;
+    }
   }
 }
 
